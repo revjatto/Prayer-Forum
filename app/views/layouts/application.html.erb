@@ -4,6 +4,7 @@
   <title>PrayerForum</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+   <%= favicon_link_tag 'favicon.ico' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -17,24 +18,30 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
+
         <a class="navbar-brand" href="#">Prayer Forum</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-        <li><%= link_to "Home", root_path, class: "active" %></li>
-          <li><a href="#">Link</a></li>
+        <li><%= link_to "Blog", root_path, class: "active" %></li>
+          <li><a href="http://ckwe.co.uk">About Us</a></li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
+              <li><%= link_to 'Login', new_user_session_path %></li>
               <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
+               <li><%= link_to 'SignUp', new_user_registration_path  %></li>
+               <li role="separator" class="divider"></li>
+               <li><a href="#">Donation</a></li>
+               <li role="separator" class="divider"></li>
+               <% if user_signed_in? %>
+
+              <li><%= link_to 'Edit Profile',  edit_user_registration_path %></li>
               <li role="separator" class="divider"></li>
-              <li><a href="#">One more separated link</a></li>
+            <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+                <% end %>
             </ul>
           </li>
         </ul>
@@ -44,10 +51,19 @@
           </div>
           <button type="submit" class="btn btn-default">Submit</button>
         </form>
+
+
+
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Link</a></li>
+                <li class="user-name">Welcome: <%= if user_signed_in? then current_user.name end %></li>
+
+            <% if user_signed_in? %>
+            <li><%=link_to "Post-A_Prayer", new_post_path %></li>
+
+            <% end %>
+
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Teaching <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="#">Action</a></li>
               <li><a href="#">Another action</a></li>
@@ -60,7 +76,16 @@
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
+
+  <% flash.each do |key, value| %>
+<div class="alert alert-<%= key %> alert-dismissable">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+  <%= value %>
+</div>
+<% end %>
+
 <%= yield %>
+
 
 <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
  <script>tinymce.init({ selector:'textarea' });</script>

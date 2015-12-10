@@ -1,0 +1,19 @@
+<%= tinymce_assets %>
+<%= tinymce %>
+<%= form_for ([@post, @post.comments.build]) do |f| %>
+
+<P>
+  <%= f.label :name %><br/>
+  <%= f.text_field :name %>
+</P>
+
+<P>
+  <%= f.label :body %><br/>
+  <%= f.text_area :body, :class => "tinymce", :rows => 20, :cols => 80 %>
+
+</P>
+<br/>
+<P>
+  <%= f.submit %>
+</P>
+<% end %>

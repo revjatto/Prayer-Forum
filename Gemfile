@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'devise', '~> 3.5', '>= 3.5.3'
 gem 'tinymce-rails', '~> 4.3', '>= 4.3.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'

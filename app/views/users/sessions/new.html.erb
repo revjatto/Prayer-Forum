@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="well">
+ <div class="jumbotron">
+   <%= image_tag "Jesus-is-Lord.png", class: "img-prayer" %>
+ </div>
+ <div class="row">
+   <div class="col-sm-8">
+
+     <h2>Log in</h2>
+
+     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+       <div class="field">
+         <%= f.label :email %><br />
+         <%= f.email_field :email, autofocus: true %>
+       </div>
+
+       <div class="field">
+         <%= f.label :password %><br />
+         <%= f.password_field :password, autocomplete: "off" %>
+       </div>
+
+       <% if devise_mapping.rememberable? -%>
+         <div class="field">
+           <%= f.check_box :remember_me %>
+           <%= f.label :remember_me %>
+         </div>
+       <% end -%>
+
+       <div class="actions">
+         <%= f.submit "Log in" %>
+       </div>
+     <% end %>
+
+     <%= render "users/shared/links" %>
+
+
+
+     </div>
+     <!-- end of main body-->
+
+   <div class="col-sm-4">
+     <h2>Utilities</h2>
+
+     <%= image_tag 'holy-spirit-come.jpg', :class => "holy" %>
+
+     <iframe width="300" height="315" src="https://www.youtube.com/embed/NfXybggH4Qo" frameborder="0" allowfullscreen></iframe>
+     <br/>
+     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+ <!-- Front page - 2 (www.ckwe.co.uk) -->
+ <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-9591689799095900"
+      data-ad-slot="9745791119"
+      data-ad-format="auto"></ins>
+ <script>
+ (adsbygoogle = window.adsbygoogle || []).push({});
+ </script>
+ <p></p>
+ <iframe width="300" height="315" src="https://www.youtube.com/embed/MgEY4hdbxGg" frameborder="0" allowfullscreen></iframe>
+
+ <p></p>
+ <iframe width="300" height="315" src="https://www.youtube.com/embed/enMZyFaQStg" frameborder="0" allowfullscreen></iframe>
+
+ <p></p>
+ <iframe width="300" height="315" src="https://www.youtube.com/embed/ZML6pnSkr8I" frameborder="0" allowfullscreen></iframe>
+   </div>
+   </div>
+</div>
+</div>

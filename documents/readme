@@ -2,3 +2,25 @@
 
 <%= tinymce_assets %>
 <%= tinymce %>
+<div id="sidebar">
+
+<div id="logo">
+<%= link_to root_path do %>
+<%= image_tag "logo.png" %>
+<% end %>
+</div>
+<ul>
+<li class="category">Website</li>
+<li><%= link_to "blog", root_path %></li>
+<li>About</li>
+</ul>
+<ul>
+  <li class="category">Social</li>
+  <li><a href="https://twitter.com/revjatto">Twitter</a></li>
+  <li><a href="https://facebook.com/revjatto">Facebook</a></li>
+  <li><a href="https://youtube.com/revjatto">Youtube</a></li>
+  <li><a href="https://github.com.com/revjatto">Github</a></li>
+</ul>
+</div>
+git remote add origin https://github.com/revjatto/Prayer-Forum.git
+git push -u origin master
