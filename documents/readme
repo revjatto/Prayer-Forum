@@ -24,3 +24,5 @@
 </div>
 git remote add origin https://github.com/revjatto/Prayer-Forum.git
 git push -u origin master
+
+https://git.heroku.com/prayerforum.git
