@@ -6,16 +6,18 @@ body{
 
   font-family: 'Lora', serif;
   background: url(/cwp.jpg);
+  font-size: 14px;
 }
 
 .user-name{
-	color: #FFFFFF;
+	color: #000000;
 	font-size: 14px;
-	text-emphasis-color:  #FFFFFF;
-
+	text-emphasis-color:  #000000;
+padding-left: 490px;
 }
 .navbar-default {
-	background-color: black;
+	background-color: #F5F5F5;
+  	text-transform: uppercase;
 	border-radius: 0;
 	padding: 15px 0;
 	border: none;
@@ -26,7 +28,7 @@ body{
 	letter-spacing: -1px;
 	font-size: 1.8em;
 	font-weight: 300;
-	color: #1D976C !important;
+	color: #B22222 !important;
 }
 
 h1, h2, h3, h4, h5, h6 {

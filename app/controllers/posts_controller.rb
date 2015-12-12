@@ -21,6 +21,9 @@ class PostsController < ApplicationController
     end
   end
 
+def prayer
+end
+
   def show
     @post = Post.find(params[:id])
   end

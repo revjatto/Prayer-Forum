@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'pages/prayer'
+  get 'pages/confession'
   devise_for :users
   get 'comments/new'
 
