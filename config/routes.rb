@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :admins
   get 'pages/prayer'
   get 'pages/confession'
   devise_for :users
@@ -12,6 +13,6 @@ resources :posts do
 end
 
 
-root "posts#index"
+root "posts#home"
 
 end

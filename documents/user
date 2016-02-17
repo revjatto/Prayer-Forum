@@ -1,0 +1,10 @@
+set a user to have admin right
+a = User
+a.admin = true
+set username
+a.first_name = "John"
+a.last_name = "Doe"
+
+save to db
+a.save
+
